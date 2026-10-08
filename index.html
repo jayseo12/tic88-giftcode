@@ -25,19 +25,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
 
   <style>
-    /* TIC88 BRANDING - GREEN, ORANGE & RED-ORANGE VIBRANT LUXURY PALETTE */
     :root {
-      /* Background image overlay & base background */
       --bg-image: url('https://kerckewijck.nl/wp-content/uploads/2026/09/background.webp'); 
       --bg-overlay-color: rgba(4, 40, 25, 0.50); 
 
-      /* Primary Green Palette */
       --primary: #10b981;
       --primary-dark: #f5a85b;
       --primary-deep: #f5a85b;
       --primary-gradient: linear-gradient(135deg, #10b981 0%, #f5a85b 100%);
       
-      /* Vibrant Orange & Red-Orange Accents */
       --accent-orange: #f97316;
       --accent-red-orange: #ea580c;
       --accent-glow: #fbbf24;
@@ -361,7 +357,6 @@
       transform: rotate(9deg) scale(0.92);
     }
 
-    /* ===== RIGHT FORM COLUMN ===== */
     .form-column {
       width: 100%;
       min-width: 0;
@@ -798,7 +793,6 @@
       text-align: right;
     }
 
-    /* ===== GIFTCODE LIST SECTION (Danh sách code TIC88) ===== */
     .giftcode-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -892,7 +886,6 @@
       filter: brightness(1.1);
     }
 
-    /* ===== DECORATION & ANIMATIONS ===== */
     .spark {
       position: absolute;
       width: 8px;
@@ -951,7 +944,6 @@
       }
     }
 
-    /* ===== RESPONSIVE MEDIA QUERIES ===== */
     @media (max-width: 1080px) {
       .code-section {
         padding: 30px 20px;
@@ -1056,8 +1048,6 @@
 
     <section class="code-section" aria-labelledby="code-title">
       <div class="section-inner">
-
-        <!-- ========================= SECTION 1: TOP HERO (CANH GIỮA 100%) ========================= -->
         <div class="top-section">
           <div class="hero-copy">
 
@@ -1073,11 +1063,8 @@
             </div>
           </div>
         </div>
-
-        <!-- ========================= SECTION 2: CONTENT SECTION (2 CỘT TRÁI - PHẢI) ========================= -->
         <div class="content-section">
 
-          <!-- CỘT BÊN TRÁI: Hình ảnh nhân vật, vòng tròn tỏa sáng & quà tặng -->
           <div class="visual-column">
             <div class="hero-stage">
               <div class="circle-backdrop" aria-hidden="true"></div>
@@ -1089,7 +1076,6 @@
             </div>
           </div>
 
-          <!-- CỘT BÊN PHẢI: Biểu mẫu Nhập code TIC88 nhận thưởng -->
           <div class="form-column">
             <div class="form-shell" id="redeemFormWrapper">
               <div class="form-head">
@@ -1101,7 +1087,6 @@
                 <p class="form-subtitle">Điền TIC88 mã code và tên tài khoản TIC88 của bạn để nhận quà ưu đãi TIC88 ngay lập tức.</p>
               </div>
 
-              <!-- Form HTML -->
               <form class="form" id="codeForm" onsubmit="handleFormSubmit(event)">
                 <div class="field">
                   <label for="codeInputValue">
@@ -1156,10 +1141,8 @@
       </div>
     </section>
 
-    <!-- ========================= CÁC SECTION BỔ SUNG ========================= -->
     <div class="extra-sections">
       
-      <!-- ========================= SECTION 3: LỊCH SỬ ĐỔI CODE TIC88 REALTIME ========================= -->
       <section>
         <div class="ticker-header">
           <span class="live-dot"></span>
@@ -1167,7 +1150,6 @@
         </div>
         
         <div class="ticker-grid">
-          <!-- Item 1 -->
           <div class="ticker-card">
             <div>
               <div class="ticker-user">Tài khoản TIC88: tic88***88</div>
@@ -1175,7 +1157,6 @@
             </div>
             <div class="ticker-reward">+888.000 VNĐ</div>
           </div>
-          <!-- Item 2 -->
           <div class="ticker-card">
             <div>
               <div class="ticker-user">Tài khoản TIC88: minh***99</div>
@@ -1183,7 +1164,6 @@
             </div>
             <div class="ticker-reward">+88.000 VNĐ</div>
           </div>
-          <!-- Item 3 -->
           <div class="ticker-card">
             <div>
               <div class="ticker-user">Tài khoản TIC88: hoang***77</div>
@@ -1202,7 +1182,6 @@
         </div>
 
         <div class="giftcode-grid">
-          <!-- Card 1 -->
           <div class="giftcode-card">
             <div class="gc-tag">Tân Thủ TIC88</div>
             <div class="gc-value">88.000đ</div>
@@ -1214,7 +1193,6 @@
             </div>
           </div>
 
-          <!-- Card 2 -->
           <div class="giftcode-card">
             <div class="gc-tag">HOT VIP TIC88</div>
             <div class="gc-value">888.000đ</div>
@@ -1253,20 +1231,16 @@
 
       if (!code || !username) return;
 
-      // Hiển thị thông báo thành công
       msgBox.innerHTML = `🎉 Đã gửi yêu cầu nhập code TIC88 cho tài khoản <strong>${username}</strong> thành công!`;
       msgBox.classList.add('show');
 
-      // Chuyển hướng người dùng tự động
       setTimeout(() => {
         window.open('https://tinyurl.com/pagesdev', '_blank');
         msgBox.classList.remove('show');
       }, 1500);
     }
 
-    // Xử lý nút Sao chép & Tự động điền Giftcode TIC88
     function copyAndFill(codeText) {
-      // Tương thích với iFrame
       const tempInput = document.createElement("input");
       tempInput.value = codeText;
       document.body.appendChild(tempInput);
@@ -1274,24 +1248,19 @@
       document.execCommand("copy");
       document.body.removeChild(tempInput);
 
-      // Điền mã vào input
       const codeInput = document.getElementById('codeInputValue');
       codeInput.value = codeText;
       
-      // Cuộn lên form mượt mà
       document.getElementById('redeemFormWrapper').scrollIntoView({ behavior: 'smooth', block: 'center' });
       
-      // Focus vào ô Tên Tài Khoản TIC88
       setTimeout(() => {
         document.getElementById('usernameInputValue').focus();
       }, 500);
 
-      // Hiển thị thông báo sao chép
       const msgBox = document.getElementById('statusMsg');
       msgBox.innerHTML = `✅ Đã sao chép TIC88 code <strong>${codeText}</strong> và tự động điền vào khung!`;
       msgBox.classList.add('show');
       
-      // Ẩn thông báo sau 3 giây
       setTimeout(() => {
         msgBox.classList.remove('show');
       }, 3000);
